@@ -31,27 +31,109 @@
           />
         </div>
         <div class="row-content">
-            <label for="profile" class="label text">Profile image</label>
-            <div class="profile-radio-content">
-                <label>
-                    <input type="radio" id="profile1" name="profile" value="" required>
-                    <img src="" alt="" id="image1" class="profile">
-                </label>
-                <label>
-                    <input type="radio" id="profile2" name="profile" value="" required>
-                    <img src="" alt="" id="image2" class="profile">
-                </label>
-                <label>
-                    <input type="radio" id="profile3" name="profile" value="" required>
-                    <img src="" alt="" id="image3" class="profile">
-                </label>
-                <label>
-                    <input type="radio" id="profile4" name="profile" value="" required>
-                    <img src="" alt="" id="image4" class="profile">
-                </label>
-            </div>
+          <label for="profile" class="label text">Profile image</label>
+          <div class="profile-radio-content">
+            <label>
+              <input
+                type="radio"
+                id="profile1"
+                name="profile"
+                value=""
+                required
+              />
+              <img src="" alt="" id="image1" class="profile" />
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="profile2"
+                name="profile"
+                value=""
+                required
+              />
+              <img src="" alt="" id="image2" class="profile" />
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="profile3"
+                name="profile"
+                value=""
+                required
+              />
+              <img src="" alt="" id="image3" class="profile" />
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="profile4"
+                name="profile"
+                value=""
+                required
+              />
+              <img src="" alt="" id="image4" class="profile" />
+            </label>
+          </div>
         </div>
-        
+        <div class="row-content">
+          <label for="gender" class="label text">Gender</label>
+          <div>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male" class="text">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female" class="text">Female</label>
+          </div>
+        </div>
+        <div class="row-content">
+          <label for="department" class="label text">Department</label>
+          <div>
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="hr"
+              name="hr"
+              value="HR"
+            />
+            <label for="hr" class="text">HR</label>
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="sale"
+              name="sale"
+              value="Sales"
+            />
+            <label for="sale" class="text">Sales</label>
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="finance"
+              name="finance"
+              value="Finance"
+            />
+            <label for="finance" class="text">Finance</label>
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="engineer"
+              name="engineer"
+              value="Engineer"
+            />
+            <label for="engineer" class="text">Engineer</label>
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="other"
+              name="other"
+              value="Other"
+            />
+            <label for="other" class="text">Other</label>
+          </div>
+        </div>
+        <div class="row-content">
+            <label for="salary" class="label text">Choose your salary:</label>
+            <input type="range" class="input" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
+            <output class="salary-output text" for="salary">400000</output>
+        </div>
       </form>
     </div>
   </body>
