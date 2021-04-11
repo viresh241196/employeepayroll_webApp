@@ -40,6 +40,12 @@ class EmployeePayrollData {
     if (genderRegx.test(gender)) this._gender = gender;
     else throw "invalid gender";
   }
+  get department() {
+    return this._department;
+  }
+  set department(department) {
+    this._department = department;
+  }
 
   get note() {
     return this._note;
@@ -54,10 +60,9 @@ class EmployeePayrollData {
     let datePassed = new Date(startDate);
     let now = new Date();
     if (now > datePassed) {
-        this._startDate = startDate;
-    }
-    else throw 'Start Date is Future Date!'
-}
+      this._startDate = startDate;
+    } else throw "Start Date is Future Date!";
+  }
 
   //method
   toString() {
@@ -67,15 +72,19 @@ class EmployeePayrollData {
         ? "undefined"
         : this.startDate.toLocaleDateString("en-US", options);
     return (
-      "id=" +
+      " id=" +
       this.id +
-      ",name= " +
+      " name= " +
       this.name +
-      ",salary=" +
+      " profile_pic=" +
+      this.profilePic +
+      " salary=" +
       this.salary +
-      ",gender=" +
+      " gender=" +
       this.gender +
-      ",startDate =" +
+      " department=" +
+      this.department +
+      " startDate =" +
       empDate
     );
   }
