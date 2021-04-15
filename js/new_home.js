@@ -2,7 +2,7 @@ let empPayrollList;
 window.addEventListener("DOMContentLoaded", (event) => {
   empPayrollList = getEmppayrollDataFromStorage();
   document.querySelector(".emp-count").textContent = empPayrollList.length;
-  createInnerHtml(empPayrollList);
+  createInnerHtml();
   localStorage.removeItem("editEmp");
 });
 

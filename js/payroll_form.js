@@ -1,4 +1,5 @@
 var id = 0;
+let empPayrollList;
 window.addEventListener("DOMContentLoaded", (event) => {
   const name = document.querySelector("#name");
   const textError = document.querySelector(".text-error");
@@ -23,8 +24,10 @@ salary.addEventListener("input", function () {
 });
 
 const save = () => {
+  console.log("hii");
   try {
     let employeePayrollData = createEmployeePayroll();
+    console.log(employeePayrollData);
     createAndUpdateStorage(employeePayrollData);
   } catch (e) {
     return;
@@ -32,7 +35,7 @@ const save = () => {
 };
 
 function createAndUpdateStorage(employeePayrollData) {
-  let employeePayrollList = JSON.parse(
+  employeePayrollList = JSON.parse(
     localStorage.getItem("EmployeePayrollList")
   );
   if (employeePayrollList != undefined) {
@@ -55,7 +58,12 @@ const createEmployeePayroll = () => {
     setTextValue(".text-error", e);
     throw e;
   }
-  employeePayrollData.id = id + 1;
+  // employeePayrollData.id = empPayrollList.length;
+  let id1=employeePayrollList = JSON.parse(
+    localStorage.getItem("EmployeePayrollList")
+  ).length;
+  console.log(JSON.parse(id1));
+  employeePayrollData.id = id1;
   employeePayrollData.profilePic = getSelectedValues("[name=profile]").pop();
   employeePayrollData.gender = getSelectedValues("[name=gender]").pop();
   employeePayrollData.department = getSelectedValues("[name=department]");
@@ -67,7 +75,7 @@ const createEmployeePayroll = () => {
     getInputValueById("#month") +
     " " +
     getInputValueById("#year");
-  console.log(date);
+    console.log(date);
    employeePayrollData.startDate = date;//Date.parse(date)
   alert(employeePayrollData.toString());
   return employeePayrollData;
