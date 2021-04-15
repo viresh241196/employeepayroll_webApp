@@ -1,3 +1,4 @@
+var id = 0;
 window.addEventListener("DOMContentLoaded", (event) => {
   const name = document.querySelector("#name");
   const textError = document.querySelector(".text-error");
@@ -54,6 +55,7 @@ const createEmployeePayroll = () => {
     setTextValue(".text-error", e);
     throw e;
   }
+  employeePayrollData.id = id + 1;
   employeePayrollData.profilePic = getSelectedValues("[name=profile]").pop();
   employeePayrollData.gender = getSelectedValues("[name=gender]").pop();
   employeePayrollData.department = getSelectedValues("[name=department]");
@@ -65,7 +67,8 @@ const createEmployeePayroll = () => {
     getInputValueById("#month") +
     " " +
     getInputValueById("#year");
-  employeePayrollData.date = Date.parse(date);
+  console.log(date);
+   employeePayrollData.startDate = date;//Date.parse(date)
   alert(employeePayrollData.toString());
   return employeePayrollData;
 };
@@ -114,9 +117,6 @@ const setTextValue = (id, value) => {
 };
 
 const setValue = (id, value) => {
-  const elemnet = document.querySelector(id);
+  const element = document.querySelector(id);
   element.value = value;
 };
-
-
-
